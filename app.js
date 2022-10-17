@@ -10,6 +10,8 @@ app.use("/",route)
 app.use(express.static("public"))
 mongoose.connect("mongodb+srv://chandu-mern:74161mern@cluster0.qkufs2p.mongodb.net/?retryWrites=true&w=majority"
 ,()=> {console.log("Connected to DB")})
-
+app.get("*",(req,res)=>{
+    res.send("page not found")
+})
 app.listen(port,()=> { console.log(`Server is up at ${port}`)})
 //mongodb+srv://root:root@cluster0.mgswfkd.mongodb.net/?retryWrites=true&w=majority
